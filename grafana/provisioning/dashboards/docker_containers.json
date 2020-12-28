@@ -80,7 +80,7 @@
               "intervalFactor": 1,
               "legendFormat": "",
               "refId": "A",
-              "step": 10
+              "step": 1
             }
           ],
           "thresholds": "65, 90",
@@ -159,11 +159,11 @@
             {
               "expr": "machine_cpu_cores",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "",
               "metric": "machine_cpu_cores",
               "refId": "A",
-              "step": 20
+              "step": 1
             }
           ],
           "thresholds": "",
@@ -239,10 +239,10 @@
             {
               "expr": "(sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes+node_memory_Buffers_bytes+node_memory_Cached_bytes) ) / sum(node_memory_MemTotal_bytes) * 100",
               "interval": "10s",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "",
               "refId": "A",
-              "step": 20
+              "step": 1
             }
           ],
           "thresholds": "65, 90",
@@ -322,10 +322,10 @@
             {
               "expr": "sum(container_memory_usage_bytes{image!=\"\"})",
               "interval": "10s",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "",
               "refId": "A",
-              "step": 20
+              "step": 1
             }
           ],
           "thresholds": "",
@@ -408,7 +408,7 @@
               "intervalFactor": 1,
               "legendFormat": "",
               "refId": "A",
-              "step": 30
+              "step": 1
             }
           ],
           "thresholds": "65, 90",
@@ -488,9 +488,9 @@
             {
               "expr": "sum(container_fs_usage_bytes)",
               "interval": "30s",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "refId": "A",
-              "step": 60
+              "step": 1
             }
           ],
           "thresholds": "",
@@ -559,10 +559,10 @@
             {
               "expr": "scalar(count(container_memory_usage_bytes{image!=\"\"}) > 0)",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "containers",
               "refId": "A",
-              "step": 2
+              "step": 1
             }
           ],
           "timeFrom": null,
@@ -643,11 +643,11 @@
             {
               "expr": "node_load1",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "load 1m",
               "metric": "node_load1",
               "refId": "A",
-              "step": 2
+              "step": 1
             }
           ],
           "timeFrom": null,
@@ -737,29 +737,29 @@
             {
               "expr": "sum(irate(node_disk_read_bytes_total[5m]))",
               "interval": "2s",
-              "intervalFactor": 4,
+              "intervalFactor": 1,
               "legendFormat": "read",
               "metric": "",
               "refId": "A",
-              "step": 8
+              "step": 1
             },
             {
               "expr": "sum(irate(node_disk_written_bytes_total[5m]))",
               "interval": "2s",
-              "intervalFactor": 4,
+              "intervalFactor": 1,
               "legendFormat": "written",
               "metric": "",
               "refId": "B",
-              "step": 8
+              "step": 1
             },
             {
               "expr": "sum(irate(node_disk_io_time_seconds_total[5m]))",
               "interval": "2s",
-              "intervalFactor": 4,
+              "intervalFactor": 1,
               "legendFormat": "io time",
               "metric": "",
               "refId": "C",
-              "step": 8
+              "step": 1
             }
           ],
           "timeFrom": null,
@@ -844,11 +844,11 @@
           "targets": [
             {
               "expr": "sum by (name) (rate(container_cpu_usage_seconds_total{image!=\"\",container_label_org_label_schema_group=\"\"}[1m])) / scalar(count(node_cpu_seconds_total{mode=\"user\"})) * 100",
-              "intervalFactor": 10,
+              "intervalFactor": 1,
               "legendFormat": "{{ name }}",
               "metric": "container_cpu_user_seconds_total",
               "refId": "A",
-              "step": 10
+              "step": 1
             }
           ],
           "timeFrom": null,
@@ -1014,11 +1014,11 @@
           "targets": [
             {
               "expr": "sum by (name) (container_memory_cache{image!=\"\",container_label_org_label_schema_group=\"\"})",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "{{name}}",
               "metric": "container_memory_cache",
               "refId": "A",
-              "step": 2
+              "step": 1
             }
           ],
           "timeFrom": null,
@@ -1103,11 +1103,11 @@
           "targets": [
             {
               "expr": "sum by (name) (rate(container_network_receive_bytes_total{image!=\"\",container_label_org_label_schema_group=\"\"}[1m]))",
-              "intervalFactor": 10,
+              "intervalFactor": 1,
               "legendFormat": "{{ name }}",
               "metric": "container_network_receive_bytes_total",
               "refId": "A",
-              "step": 10
+              "step": 1
             }
           ],
           "timeFrom": null,
@@ -1184,11 +1184,11 @@
           "targets": [
             {
               "expr": "sum by (name) (rate(container_network_transmit_bytes_total{image!=\"\",container_label_org_label_schema_group=\"\"}[1m]))",
-              "intervalFactor": 10,
+              "intervalFactor": 1,
               "legendFormat": "{{ name }}",
               "metric": "container_network_transmit_bytes_total",
               "refId": "A",
-              "step": 10
+              "step": 1
             }
           ],
           "timeFrom": null,
